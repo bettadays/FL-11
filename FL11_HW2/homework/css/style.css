@@ -1,0 +1,348 @@
+
+@media print {
+
+    body {
+        background: white;
+        margin: 0;
+        padding-top: 0;
+    }
+
+
+    .tm-banner {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    ol {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: auto;
+    }
+
+
+    .container {
+        max-width: 1050px;
+    }
+
+
+    #tmCarousel {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+
+    .tm-team-description-container {
+        max-width: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    .tm-main-content {
+        padding-top: 0;
+    }
+
+    .tm-team-img,
+    .tm-sidebar,
+    #about,
+    .gallery-container,
+    .carousel-indicators,
+    #contact,
+    .img-fluid.img-contact-us {
+        display: none;
+    }
+
+
+    h2 {
+        text-align: center;
+        color: lightskyblue;
+        font-weight: 300;
+    }
+
+
+    h2:first-child {
+        text-transform: uppercase;
+    }
+
+
+    .padding-medium {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+
+    .heading .padding-medium h2 {
+        padding-top: 5px;
+    }
+
+
+    li {
+        list-style: none;
+        padding-bottom: 15px;
+    }
+
+
+    li:last-child {
+        padding-bottom: 10px;
+    }
+
+
+    a {
+        color: black;
+    }
+
+
+    li:first-child {
+        padding-top: 10px;
+    }
+
+
+    li::first-letter {
+        color: lightskyblue;
+    }
+
+
+    li:nth-child(2n-1) {
+        padding-left: 20px;
+    }
+
+
+    li:nth-child(2n) {
+        padding-left: 220px;
+    }
+
+
+    .tm-content-box {
+        margin-bottom: 0;
+    }
+
+
+    .carousel.slide {
+        padding-top: 10px;
+    }
+
+
+    a[target="_parent"] {
+        color: blue;
+    }
+}
+
+
+
+@media screen {
+    .gallery-container .box:nth-child(2n+1):hover>h2 {
+        background-color: lightskyblue;
+        color: white;
+    }
+
+
+    .tm-sidebar,
+    .tm-content-header,
+    section {
+        box-shadow: 0 0 10px rgba(61, 55, 61, 0.7);
+    }
+
+
+    .tm-banner {
+        background-color: #76cdd7;
+    }
+
+
+    .tm-banner-inner {
+        background-color: white;
+    }
+
+
+    .tm-banner-text {
+        letter-spacing: 0.2em;
+        word-spacing: 10px;
+        text-shadow: 0px 3px 1px #76cdd7, 0px 10px 1.5px #76cdd7;
+    }
+
+
+    section::before {
+        content: "";
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        border-style: solid;
+        border-width: 40px 40px 0 0;
+        border-color: lightskyblue transparent transparent transparent;
+    }
+
+
+    section>div>h2 {
+        /*try better */
+        text-align: center;
+        color: lightskyblue;
+    }
+
+
+    .heading .padding-medium h2 {
+        color: #76cdd7;
+    }
+
+
+    ol {
+        list-style-type: lower-roman;
+    }
+
+
+    li>a:visited {
+        color: #ffb347;
+    }
+
+
+    .padding-medium li>a {
+        padding-left: 2px;
+    }
+
+
+    ol>li>a:hover {
+        text-decoration: none;
+        color: #ffb347;
+        padding-left: 2px;
+        border-left: 2px solid #ffb347;
+    }
+
+
+    li {
+        position: relative;
+    }
+
+
+    .padding-medium ol>li:nth-child(1)::after,
+    .padding-medium ol>li:nth-child(3)::after {
+        content: "New";
+        color: red;
+        font-weight: bold;
+        font-variant: small-caps;
+        vertical-align: super;
+        font-size: 8px;
+    }
+
+
+    .tm-nav-item-link:hover {
+        background-color: #f2f2f2;
+    }
+
+
+     #contact h2 {
+    text-align: left;
+}
+
+    .form-control {
+        border: none;
+        border-bottom: 3px solid lightskyblue;
+    }
+
+
+    .form-control:focus {
+        color: white;
+        background-color: lightskyblue;
+        border-radius: 5px;
+    }
+
+
+    input[name="contact_email"] {
+        background: url(../img/email-icon.png) right center no-repeat;
+        background-size: 27px 27px;
+    }
+
+
+    textarea.form-control {
+        border: 3px solid lightskyblue;
+        border-radius: 5px;
+        resize: none;
+    }
+
+
+    button.btn-primary {
+        background-color: white;
+        color: lightskyblue;
+        border: 3px solid lightskyblue;
+        border-radius: 0;
+        float: right;
+        height: 50px;
+        width: 150px;
+    }
+
+
+    button.btn-primary:hover {
+        background-color: lightskyblue;
+        color: white;
+        border: 3px solid transparent;
+    }
+
+
+    .flex-2-col {
+        display: flex;
+    }
+
+
+    .tm-team-description-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    h2+p {
+        font-style: italic;
+    }
+
+
+    h2~p {
+        line-height: 30px;
+    }
+
+
+    h2+p,
+    h2~p {
+        text-indent: 30px;
+    }
+
+
+    .tm-banner-text {
+        animation-duration: 5s;
+        animation-name: rotation;
+    }
+
+
+    @keyframes rotation {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+
+    .tm-team-description-container h2 {
+        text-align: left;
+    }
+
+
+    .box-work {
+        background-color: #f5f5f5;
+        padding: 10px;
+    }
+
+
+    .box-work:nth-of-type(2n-1) {
+        background-color: white;
+    }
+
+
+    .box-work h2+p {
+        text-indent: 0px;
+    }
+
+
+
+}
