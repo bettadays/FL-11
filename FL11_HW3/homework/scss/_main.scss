@@ -1,0 +1,294 @@
+
+@mixin text($family, $size, $color) {
+    color: $color;
+    font-size: $size;
+    font-family: $family;
+}
+
+
+@mixin after ($height, $width) {
+    content: "";
+    background-color: $underline;
+    display: block;
+    height: $height;
+    width: $width;
+    z-index: -1;
+    position: absolute;
+}
+
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+
+body {
+    margin: 0;
+    font-size: 16px; // important if not to use reboot file etc
+    background-color: $bodyBackground;
+}
+
+
+.header {
+    background: $heroImg no-repeat center center;
+    background-size: cover;
+    height: 900px;
+    border-bottom-right-radius: 630px 330px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 55px;
+
+
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 650px;
+        padding-left: 190px;
+        padding-top: 25px;
+    }
+
+
+    &_heading {
+        color: $fontColor;
+        font-size: 5.6em;
+        font-weight: bold;
+        font-family: map-get($fonts, "big");
+        width: 700px;
+        line-height: 1em;
+        padding-top: 30px;
+        position: relative;
+        z-index: 3;
+
+
+        &::after {
+            content: "";
+            background-color: $underline;
+            display: block;
+            height: 32px;
+            width: 380px;
+            z-index: -1;
+            position: absolute;
+            bottom: 0px;
+        }
+    }
+
+
+    &_text {
+        font-family: map-get($fonts, "small");
+        color: $fontColor;
+        font-size: 1.3em;
+        white-space: pre;
+        margin-left: -53px;
+        line-height: 1.5em;
+    }
+
+
+    &_button {
+        background-color: $buttonColor;
+        border-width: 0;
+        color: white;
+        width: 180px;
+        height: 60px;
+        border-radius: 2px;
+        font-size: 1.2em;
+        font-family: map-get($fonts, "small");
+        font-weight: 600;
+
+        &:hover {
+            background-color: lighten($buttonColor, 10%);
+            border-width: 0;
+        }
+
+        &:active {
+            background-color: darken($buttonColor, 10%);
+        }
+    }
+}
+
+
+.landing-logo {
+    width: 160px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: map-get($fonts, "small");
+
+    p {
+        font-weight: 600;
+        text-align: center;
+        font-size: 1.6em;
+        color: $fontColor;
+        line-height: 0.8em;
+        padding-left: 20px;
+    }
+
+    img {
+        height: 45px;
+    }
+
+    span {
+        display: block;
+        font-size: 0.5em;
+    }
+}
+
+
+.section {
+    position: relative;
+
+    &_card_wrap {
+        margin: auto;
+        padding-top: 55px;
+        padding-bottom: 90px;
+
+        @media (min-width: 1600px) {
+            width: 1540px;
+        }
+
+        height: 570px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_text {
+        @include text($family: map-get($fonts, "big"), $size: 3.3em, $color: $fontColor);
+        text-align: center;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+        width: 530px;
+        margin: auto;
+
+        &::after {
+            @include after($height: 16px, $width: 237px);
+            right: 17px;
+            bottom: 11px;
+        }
+    }
+
+    &_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 495px;
+        height: 570px;
+        background-color: $contentBackground;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        border-radius: $borderRadius;
+
+        &_img {
+            width: 90%;
+            padding-top: 28px;
+            $borderRadius: 6px;
+        }
+
+        &_heading {
+            @include text($family: map-get($fonts, "big"), $size: 2em, $color: white);
+            width: auto;
+            padding-top: 15px;
+        }
+
+        &_underline {
+            background-color: $underline;
+            display: block;
+            height: 16px;
+            width: 100%;
+            z-index: -1;
+            position: relative;
+            bottom: 18px;
+        }
+
+        &_text {
+            @include text($family: map-get($fonts, "small"), $size: 1.3em, $color: $contentColor);
+            line-height: 1.5em;
+            padding-top: 10px;
+            width: 450px;
+            font-weight: 200px;
+        }
+    }
+
+    &_banner {
+        width: 1200px;
+        height: 180px;
+        margin: auto;
+        background: linear-gradient(to right, $firstGradientColor, $lastGradientColor);
+        border-radius: $borderRadius;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /*	position: absolute;*/
+        position: relative;
+
+        bottom: -95px;
+        z-index: 4;
+
+        &_heading {
+            @include text($family: map-get($fonts, "big"), $size: 2.4em, $color: $fontColor);
+            font-weight: 700;
+            position: relative;
+
+            &:after {
+                @include after($height: 16px, $width: 80px);
+
+                left: 155px;
+                bottom: 1px;
+            }
+        }
+
+        &_text {
+            @include text($family: map-get($fonts, "big"), $size: 1.4em, $color: $contentColor);
+            margin-bottom: 20px;
+
+            &_wrap {
+                width: 530px;
+                height: 180px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding-left: 125px;
+            }
+        }
+
+        &_button {
+            @extend .header_button;
+
+            margin-right: 130px;
+        }
+    }
+}
+
+
+.footer {
+    background-color: $contentBackground;
+    position: relative;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 300px;
+        padding-bottom: 70px;
+    }
+
+    &_text {
+        width: 370px;
+        line-height: 1.3em;
+    }
+
+    img+p {
+        color: $contentColor;
+    }
+
+    @include text($family: map-get($fonts, "small"), $size: 1.15em, $color: $contentColor);
+
+    &-cr {
+
+        padding-bottom: 20px;
+    }
+}
