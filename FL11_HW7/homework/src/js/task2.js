@@ -36,11 +36,13 @@ while (offer) {
         presetNumber = Math.round(presetNumber);
         console.log(presetNumber);
 
-let gameMsgPart1 = `Chose a roulette pocket number from ${minNumber} to ${maxNumber}\n Atempts left: ${attemptsLeft}\n Total prize:`
+let gameMsgPart1 = `Chose a roulette pocket number from ${minNumber} to ${maxNumber}\n Atempts left: ${attemptsLeft}\n`
+let gameMsgPart2 = `Total prize: ${totalPrize}\n Possible prize on current attempt: ${possiblePrize} $`
 
 
 
-        gamerGuess = +prompt(` ${gameMsgPart1}  ${totalPrize}\n Possible prize on current attempt: ${possiblePrize} $ `);
+
+        gamerGuess = +prompt(` ${gameMsgPart1} ${gameMsgPart2}  `);
 
 
 
