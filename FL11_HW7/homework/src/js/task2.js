@@ -2,7 +2,7 @@ let totalPrize = 0;
 let possiblePrize = 100;
 let stageCounter = 0;
 
-let range = [0, 1, 2, 3, 5, 6, 7, 8]
+let range = [0, 1, 2, 3, 5, 6, 7, 8];
 
 
 let check;
@@ -34,7 +34,7 @@ while (offer) {
     for (; attemptsLeft > 0; attemptsLeft--) {
       let presetNumber = minNumber + Math.random() * (maxNumber - minNumber);
         presetNumber = Math.round(presetNumber);
-        console.log(presetNumber);
+       
 
 let gameMsgPart1 = `Chose a roulette pocket number from ${minNumber} to ${maxNumber}\n Atempts left: ${attemptsLeft}\n`
 let gameMsgPart2 = `Total prize: ${totalPrize}\n Possible prize on current attempt: ${possiblePrize} $`
@@ -47,7 +47,7 @@ let gameMsgPart2 = `Total prize: ${totalPrize}\n Possible prize on current attem
 
 
         check = gamerGuess === presetNumber;
-        console.log(check);
+       
 
         if (attemptsLeft === 1 && !check) {
             alert(`Thank you for your participation. Your prize is: ${totalPrize} $`);
